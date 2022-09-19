@@ -1,0 +1,10 @@
+---
+- name: Play to demo connection type
+  hosts: servera.lab.example.com
+  tasks:
+  - name: Task1
+    shell: sleep 2 && echo "The time now is `date`" >> /tmp/file1
+  - name: Task2
+    shell: sleep 2 && echo "The time now is `date`" >> /tmp/file2
+  - name: Task3
+    shell: sleep 2 && echo "The time now is `date`" >> /tmp/file3

@@ -1,0 +1,13 @@
+[local]
+localhost
+
+[local:vars]
+pkg=pakg_from_inv
+
+[remote]
+servera.lab.example.com
+
+[dc:children]
+local
+remote
+

@@ -1,0 +1,11 @@
+- name: Role test on west
+  hosts: uswest
+  roles:
+    - redhat.webserver
+      app_port: 8080
+
+- name: Role test on east
+  hosts: useast
+  roles:
+    - redhat.webserver
+      app_port: 8081

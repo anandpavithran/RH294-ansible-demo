@@ -1,0 +1,10 @@
+---
+- hosts: all
+  vars:
+    http_on: true
+  tasks:
+  - name: Start http service based on the variable.
+    debug:
+      msg: "httpd will be started as the value of http_on is {{http_on}}"
+    when: http_on
+

@@ -1,0 +1,15 @@
+---
+  - name: DEMO FIRST PLAYBOOK
+    hosts: servera.lab.example.com
+    tasks:
+      - name: REMOVE HTTPD
+        command: /usr/bin/rpm -qa httpd
+        register: result1
+      - debug: var=result1
+      - name: REMOVE VSFTPD
+        command: /usr/bin/rpm -qa vsftpd
+      - name: START SERVICE
+        command: /usr/bin/systemctl status httpd
+        #register: result2
+      #- debug: var=result2
+...

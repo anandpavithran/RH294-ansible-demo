@@ -1,0 +1,17 @@
+[local]
+localhost 
+
+
+[remote]
+servera.lab.example.com
+
+[remote:vars]
+test=var_for_remote
+
+
+[dc:children]
+local
+remote
+
+[dc:vars]
+test=var_for_all

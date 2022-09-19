@@ -1,0 +1,9 @@
+- name: Play to demo replace module.
+  hosts: localhost
+  tasks:
+    - name: Task to find a regexp and replace them in a file.
+      replace:
+        dest: /tmp/replace.txt
+        backup: yes
+        regexp: 'Hello'
+        replace: 'Hi'

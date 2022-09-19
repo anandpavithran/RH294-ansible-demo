@@ -1,0 +1,10 @@
+[local]
+localhost test=my_extreme_local_var
+
+[remote]
+servera.lab.example.com
+
+[dc:children]
+local
+remote
+

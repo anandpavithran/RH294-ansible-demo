@@ -1,0 +1,18 @@
+---
+- name: Dynamic facts demo
+  hosts: servera.lab.example.com
+  tasks:
+  - name: Setting a custom fact
+    set_fact:
+     one_fact: blah
+#  - name: Display the set custom fact
+#    debug:
+#     msg: "The server {{ansible_hostname}} has a custom fact call one_fact which has value {{one_fact}}"
+
+- name: Display the dynamic facts
+  hosts: local
+  tasks:
+  - name: Display the set custom fact
+    debug:
+      msg: "The value of one_fact from servera as seen from localhost is {{ hostvars['servera.lab.example.com']['one_fact'] }}"
+...

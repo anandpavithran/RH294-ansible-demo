@@ -1,0 +1,11 @@
+---
+# tasks file for redhat.webserver
+- name: Display the packages versions to be installed
+  debug:
+    msg: "This installs {{item}}"
+  with_items: "{{packages.httpd}}"
+
+#- name: Display the services to be started
+#  debug:
+#    msg: "This installs {{item}}"
+#  with_items: "{{services}}"

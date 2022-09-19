@@ -1,0 +1,8 @@
+---
+- name: Play with a log running task
+  hosts: servera.lab.example.com
+  tasks:
+  - name: Long task to run on a managed hosts.
+    command: sleep 15
+    async: 10
+    poll: 4

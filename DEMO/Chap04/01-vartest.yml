@@ -1,0 +1,10 @@
+---
+- name: Play to demo variable usage
+  hosts: local
+  vars:
+    pkg: httpd
+  tasks:
+    - name: Task to display just a message.
+      debug:
+        msg: "The value of the variable pkg is: {{pkg}}"
+...

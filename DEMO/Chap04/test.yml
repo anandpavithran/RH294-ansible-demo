@@ -1,0 +1,10 @@
+- name: Test play
+  hosts: all
+  remote_user: devops
+  tasks:
+    - yum: 
+        name: lftp
+        state: latest
+      register: output
+    - debug: 
+        msg: "{{output}}"

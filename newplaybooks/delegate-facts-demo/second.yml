@@ -1,0 +1,34 @@
+---
+ - name: Updating webserver
+   hosts: web 
+   serial: 1
+   become: true
+   remote_user: devops
+   tasks:
+
+    
+    - name: Take out the one webserver from cluster
+      haproxy:
+       state: disabled
+       host: '{{ ansible_fqdn }}'
+       socket: /var/lib/haproxy/stats
+       backend: appserver
+       wait: yes
+      delegate_to: serverc.lab.example.com
+
+    
+    - name: WAIT FOR 10 SEC
+      command: sleep 10
+    
+    - name: UPDATE the webpage
+      copy: content="DO407 TRAINING on {{ansible_fqdn}} -Modified" dest=/var/www/html/index.html
+    
+    - name: Keeping back the one webserver to cluster
+      haproxy:
+       state: enabled
+       host: '{{ ansible_fqdn }}'
+       socket: /var/lib/haproxy/stats
+       backend: appserver
+       wait: yes
+      delegate_to: serverc.lab.example.com
+    

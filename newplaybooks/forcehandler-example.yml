@@ -1,0 +1,16 @@
+ - name: MYfirst play book
+   hosts: all
+   remote_user: devops
+   become: True
+   force_handlers: yes
+   tasks:
+    - command: /bin/true 
+      notify: restart_apache
+    
+    - command: yum install notapkg 
+    
+   handlers:
+    - name: restart_apache
+      service: name=httpd state=restarted 
+
+

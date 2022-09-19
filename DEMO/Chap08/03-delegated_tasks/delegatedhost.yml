@@ -1,0 +1,16 @@
+---
+- name: Play to demo the value of facts on a delegated host
+  hosts: web
+  serial: "50%"
+  tasks:
+
+  - name: Task to take webserver out of service.
+    shell: echo -ne " $(date) -  Taking {{ansible_fqdn}} out of rotation\n" >> /tmp/loadbalancer.log
+    delegate_to: tower.lab.example.com
+
+  - name: Task to run on actual server.
+    command: hostname
+
+  - name: Task to bring web server back in to service.
+    shell: echo -ne " $(date) -  Bringing {{ansible_fqdn}} back in rotation\n" >> /tmp/loadbalancer.log
+    delegate_to: tower.lab.example.com

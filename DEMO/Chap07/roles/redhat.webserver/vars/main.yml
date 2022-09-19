@@ -1,0 +1,12 @@
+---
+# vars file for redhat.webserver
+
+packages:
+  - httpd
+      v1
+      v2
+#  - httpdaddon1
+
+services:
+  - webservice
+  - webserviceaddon

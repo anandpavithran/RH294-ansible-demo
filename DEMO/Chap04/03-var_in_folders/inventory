@@ -1,0 +1,11 @@
+[prod]
+servera
+
+[qa]
+serverb
+
+[datacenter:children]
+prod
+qa
+
+

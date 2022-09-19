@@ -1,0 +1,10 @@
+---
+- hosts: remote
+  tasks:
+  - name: Create new users on remote servers.
+    user:
+      name: "{{item.name}}"
+      password: "{{ pass | password_hash('sha512') }}"
+      shell: "{{shell}}"
+    with_items: "{{newusers}}"
+

@@ -1,0 +1,14 @@
+---
+- hosts: servera.lab.example.com
+  vars:
+    message: 
+    message1: Welcome to the world of ansible
+  tasks:
+  - name: Show the value of message variable.
+    debug:
+      var: message
+  - name: Throw exception message.
+    debug:
+      msg: "Sorry you are not welcome as message is EMPTY"
+    when:  message == "null"
+

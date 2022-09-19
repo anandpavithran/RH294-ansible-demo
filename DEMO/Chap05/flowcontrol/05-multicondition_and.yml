@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  tasks:
+  - name: Message output
+    debug:
+      msg: "{{ansible_host}} is a 64bit machine -AND-  it has more than 500 MB free"
+    when: ansible_memfree_mb > 500 and ansible_architecture=="x86_64"

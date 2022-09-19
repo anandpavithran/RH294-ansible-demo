@@ -1,0 +1,17 @@
+---
+   - name: Play 1 to deploy webserver
+     hosts: servera.lab.example.com
+     become: yes
+     remote_user: devops
+     tasks:
+      - name: Adding user
+        debug:
+          msg: "{{item}}"
+        #with_lines:
+        # - cat file1.txt
+        #with_file:
+        with_random_choice:
+         - file1.txt
+         - file2.txt
+
+... 

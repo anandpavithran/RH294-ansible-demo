@@ -1,0 +1,8 @@
+- name: Play to demo variable scope
+  hosts: localhost
+  vars:
+    var1: value1_from_play
+  tasks:
+    - name: Task1 which uses the vars
+      debug:
+        msg: "The value of var1 is {{var1}}"

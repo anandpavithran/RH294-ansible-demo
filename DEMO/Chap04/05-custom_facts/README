@@ -1,0 +1,19 @@
+Setting up custom fact file on servera:
+-------------------------------------
+# hostname
+servera.lab.example.com
+
+# pwd
+/etc/ansible/facts.d
+
+# cat hardware.fact 
+[asset]
+class = server
+id = 1234
+dc = uswest
+----
+
+Command to filter the custom facts in ad-hoc way. 
+-----------------------------------
+# ansible servera.lab.example.com -m setup -a "filter=ansible_local"
+

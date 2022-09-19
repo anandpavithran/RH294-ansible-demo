@@ -1,0 +1,17 @@
+1] Disable firewall
+C:\Users\Administrator> netsh advfirewall set allprofiles state off
+
+2]Enable Remote Access
+ 
+ a] A prerequisite is that Powershell which should be at least version 3.0. Let’s check that
+ C:\Users\Administrator> $PSVersionTable
+
+ b]C:\Users\Administrator> powershell
+ c]C:\Users\Administrator>Enable-PSRemoting
+   [Type A for all]
+ d]C:\Users\Administrator> winrm get winrm/config
+ e]C:\Users\Administrator> Set-Item -Path "WSMan:\localhost\Service\Auth\Basic" -value True
+ f]C:\Users\Administrator> Set-Item -Path "WSMan:\localhost\Service\AllowUnencrypted" -value True
+
+
+

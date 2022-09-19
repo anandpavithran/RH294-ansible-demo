@@ -1,0 +1,13 @@
+---
+- name: WEBSERVER DEPLOYMENT
+  hosts: localhost
+  remote_user: devops
+  become: true
+  tasks:
+    - name: Mytest
+      india: 
+      register: apple
+    - name: PRINT
+      debug: var=apple
+     
+

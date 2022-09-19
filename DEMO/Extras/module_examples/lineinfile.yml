@@ -1,0 +1,7 @@
+- name: Play to demo lineinfile module.
+  hosts: localhost
+  tasks:
+    - name: Task to find a line in file.
+      lineinfile:
+        dest: /tmp/hello.txt
+        line: "This is added by lineinfile task"

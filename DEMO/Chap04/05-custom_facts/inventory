@@ -1,0 +1,11 @@
+[local]
+localhost
+
+[remote]
+servera.lab.example.com
+serverb.lab.example.com
+
+[dc:children]
+local
+remote
+

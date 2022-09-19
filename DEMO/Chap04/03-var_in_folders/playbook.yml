@@ -1,0 +1,10 @@
+#Usage: ansible-playbook playbook.yml
+
+---
+- name: Package names defined in group_vars -or- host_vars directory
+  hosts: all
+  tasks:
+  - name: Display the packages to be installed
+    debug:
+      msg: "The packages to be installed are {{pkg1}} and {{pkg2}}"
+...

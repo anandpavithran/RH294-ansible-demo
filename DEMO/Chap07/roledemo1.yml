@@ -1,0 +1,4 @@
+- name: Role test
+  hosts: localhost
+  roles:
+    - redhat.webserver

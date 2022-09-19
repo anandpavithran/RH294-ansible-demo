@@ -1,0 +1,8 @@
+- name: Play to demo testing
+  hosts: servera.lab.example.com
+  tasks:
+  - name: Task1
+    script: scripts/test.sh
+    register: test_out
+  - debug:
+      var: test_out

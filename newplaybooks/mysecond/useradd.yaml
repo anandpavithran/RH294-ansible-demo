@@ -1,0 +1,15 @@
+---
+   - name: Play 1 to deploy webserver
+     hosts: servera.lab.example.com
+     become: yes
+     remote_user: devops
+     vars:
+      mypass: redhat
+     tasks:
+      - name: Adding user
+        user: 
+          name: test1
+          state: absent
+          password: "{{mypass | password_hash('sha512')}}"
+
+... 

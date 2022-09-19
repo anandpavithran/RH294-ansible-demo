@@ -1,0 +1,18 @@
+---
+  - hosts: servera.lab.example.com
+    force_handlers: yes
+    become: True
+    remote_user: devops
+    tasks:
+      - name: Install http package
+        yum: name=httpd state=present
+        register: result
+      - debug: var=result
+        changed_when: "result.rc != 2"
+        notify:
+          - restart_apache
+
+    handlers:
+      - name: restart_apache
+        service: name=httpd state=restarted
+

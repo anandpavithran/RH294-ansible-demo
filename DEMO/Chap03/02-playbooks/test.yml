@@ -1,0 +1,26 @@
+---
+# This is a test playbook.
+- name: This is play1
+  hosts: server*
+  remote_user: devops
+  become: True
+  vars:
+    var1: val1
+    var2: val2
+  tasks:
+  - name: Task to install zsh package
+    yum:
+      name: httpd
+      state: latest
+  - name: Task to create user1
+    user: .....
+
+
+- name: This is Play2
+  hosts: db*
+  tasks:
+  - name: Task1
+    module:
+  - name: Task2
+    module: 
+...

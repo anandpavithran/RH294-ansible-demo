@@ -1,0 +1,11 @@
+---
+- name: Play to demo connection type
+  hosts: localhost
+#  connection: local
+  tasks:
+  - name: Task1
+    shell: echo "The time now is `date`" >> /tmp/file1
+  - name: Task2
+    shell: echo "The time now is `date`" >> /tmp/file2
+  - name: Task3
+    shell: echo "The time now is `date`" >> /tmp/file3

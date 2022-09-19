@@ -1,0 +1,13 @@
+---
+  - name: DEMO FIRST PLAYBOOK
+    hosts: servera.lab.example.com
+    tasks:
+      - name: Install HTTPD
+        yum: 
+          name: httpd,vfstpd 
+          state: present
+      - name: START SERVICE
+        service: 
+          name: httpd 
+          state: started
+...

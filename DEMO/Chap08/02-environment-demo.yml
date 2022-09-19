@@ -1,0 +1,14 @@
+---
+- name: Play to test env
+  hosts: 
+    - server*
+  environment:
+    myownvar: BlahBlah
+  tasks:
+  - name: Task to search for env vars
+    shell: env | grep myown
+    register: envlist
+
+  - debug:
+      var: envlist.stdout_lines
+    ignore_errors: yes

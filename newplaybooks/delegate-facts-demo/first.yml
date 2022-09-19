@@ -1,0 +1,32 @@
+---
+ - name: Configuring webserver
+   hosts: web 
+   become: true
+   remote_user: devops
+   tasks:
+    - name: Install pack Webserver
+      yum: name=httpd state=present
+    - name: Deliver the webpage
+      copy: content="DO407 TRAINING on {{ansible_fqdn}}" dest=/var/www/html/index.html
+    - name: Start and Enable the service
+      service: name=httpd state=started enabled=yes
+    - name: Open the firewall port
+      firewalld: service=http immediate=yes state=enabled permanent=yes 
+ - name: Configuring HAPROXY server
+   hosts: ha
+   become: true
+   remote_user: devops
+   tasks:
+    - name: Install pack
+      yum: name=haproxy state=present
+    - name: Deliver the webpage
+      copy: src=haproxy.cfg dest=/etc/haproxy/
+    - name: Start and Enable the service
+      service: name=haproxy state=started enabled=yes
+    - name: Open the firewall port
+      firewalld: service=http immediate=yes state=enabled permanent=yes 
+    - name: Open the firewall port
+      firewalld: port=8080/tcp immediate=yes state=enabled permanent=yes 
+    - name: Open the firewall port
+      firewalld: port=8080/udp immediate=yes state=enabled permanent=yes 
+...

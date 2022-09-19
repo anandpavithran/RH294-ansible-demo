@@ -1,0 +1,20 @@
+ - hosts: all
+   become: yes
+   remote_user: devops
+   tasks: 
+    - name: Collect disk perentage
+      shell: df -h | awk '/\/$/ {print $5}' | sed 's/%//'  
+      register: apple
+    - name: Message output
+      template:
+        src: my.j2
+        dest: /tmp/details
+    - name: Collect from remote
+      fetch: src=/tmp/details dest=/tmp/
+ - hosts: localhost
+   become: yes
+   remote_user: devops
+   tasks: 
+    - name: Message output
+      command: myscript
+      

@@ -1,0 +1,21 @@
+---
+  - hosts: servera.lab.example.com
+    become: True
+    remote_user: devops
+    vars:
+      users:
+        - test1
+        - test2
+      grps:
+        - redhat1
+        - redhat2
+    tasks:
+      - name: Adding groups
+        group: name="{{ item }}" 
+        with_items: "{{ grps }}"
+      - name: Adding users
+        user: name="{{ item[0] }}" groups="{{ item[1] }}" append=yes
+        with_nested: 
+          - "{{ users }}"
+          - "{{ grps }}"
+

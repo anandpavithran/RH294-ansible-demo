@@ -1,0 +1,14 @@
+---
+  - hosts: all
+    become: True
+    remote_user: devops
+    tasks:
+      - name: Install httpd
+        yum: name=httpd state=latest
+        notify:
+          - restart_apache
+
+    handlers:
+      - name: restart_apache
+        service: name=httpd state=restarted
+

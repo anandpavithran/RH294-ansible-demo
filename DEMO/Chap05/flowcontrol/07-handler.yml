@@ -1,0 +1,25 @@
+---
+- hosts: localhost
+  tasks:
+  - name: Task1 to copy config file1
+    copy:
+      src: /tmp/myapp1.conf
+      dest: /etc/myapp1.conf
+    notify:
+      - restart_app1
+  
+  - name: Task2 to copy config file2
+    copy:
+      src: /tmp/myapp2.conf
+      dest: /etc/myapp2.conf
+    notify:
+      - restart_app2
+
+  handlers:
+    - name: restart_app1
+      debug:
+        msg: "restart app1"
+
+    - name: restart_app2
+      debug:
+        msg: "restart app2"

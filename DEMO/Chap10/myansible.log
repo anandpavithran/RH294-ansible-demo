@@ -1,0 +1,19 @@
+2016-09-22 09:34:17,537 p=1291 u=student |  PLAY [Play to demo logging] ****************************************************
+2016-09-22 09:34:17,605 p=1291 u=student |  TASK [setup] *******************************************************************
+2016-09-22 09:34:18,009 p=1291 u=student |  ok: [servera.lab.example.com]
+2016-09-22 09:34:18,012 p=1291 u=student |  TASK [Task1] *******************************************************************
+2016-09-22 09:34:18,124 p=1291 u=student |  changed: [servera.lab.example.com]
+2016-09-22 09:34:18,126 p=1291 u=student |  TASK [debug] *******************************************************************
+2016-09-22 09:34:18,166 p=1291 u=student |  ok: [servera.lab.example.com] => {
+    "test_out": {
+        "changed": true, 
+        "rc": 0, 
+        "stderr": "", 
+        "stdout": "Hello there!! Welcome to servera.lab.example.com\r\n", 
+        "stdout_lines": [
+            "Hello there!! Welcome to servera.lab.example.com"
+        ]
+    }
+}
+2016-09-22 09:34:18,169 p=1291 u=student |  PLAY RECAP *********************************************************************
+2016-09-22 09:34:18,170 p=1291 u=student |  servera.lab.example.com    : ok=3    changed=1    unreachable=0    failed=0   

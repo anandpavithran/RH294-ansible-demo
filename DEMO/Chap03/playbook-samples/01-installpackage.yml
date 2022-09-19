@@ -1,0 +1,15 @@
+---
+- name: ZShell installed on web servers
+  hosts: servera.lab.example.com
+  remote_user: root
+  tasks:
+  - name: latest zsh rpm being installed
+    yum: name=zsh state=latest
+
+- name: TCShell installed on api servers
+  hosts: serverb.lab.example.com
+  remote_user: root
+  tasks:
+  - name: latest tcsh rpm being installed
+    yum: name=tcsh state=latest
+...

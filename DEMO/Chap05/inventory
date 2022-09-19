@@ -1,0 +1,6 @@
+[local]
+localhost
+
+[remote]
+servera.lab.example.com
+

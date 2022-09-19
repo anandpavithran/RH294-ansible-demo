@@ -1,0 +1,9 @@
+[local]
+localhost test=var_for_localhost_only 
+
+
+[dc:children]
+local
+
+[dc:vars]
+test=var_for_all_dc

@@ -1,0 +1,15 @@
+---
+  - hosts: all
+    force_handlers: yes
+    become: True
+    remote_user: devops
+    tasks:
+      - name: Install no package
+        yum: name=nopackage state=latest
+        notify:
+          - restart_apache
+
+    handlers:
+      - name: restart_apache
+        service: name=ftp state=restarted
+

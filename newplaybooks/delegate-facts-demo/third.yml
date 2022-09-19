@@ -1,0 +1,9 @@
+ - hosts: web
+   tasks:
+    - name: gather facts from web servers
+      setup:
+      delegate_to: tower.lab.example.com
+      delegate_facts: True
+    - name: Print
+      debug: msg="{{ansible_fqdn}} {{inventory_hostname}}"
+

@@ -1,0 +1,12 @@
+---
+  - name: DEMO FIRST PLAYBOOK
+    hosts: servera.lab.example.com
+    vars:
+      service1: httpd
+      service2: vsftpd
+    tasks:
+      - name: Install HTTPD
+        yum: name="{{service1}},{{service2}}" state=present
+      - name: START SERVICE
+        service: name={{service1}} name={{service2}} state=started
+...

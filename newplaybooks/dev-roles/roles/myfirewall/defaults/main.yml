@@ -1,0 +1,3 @@
+---
+# defaults file for my firewall
+  firewall_service: ssh

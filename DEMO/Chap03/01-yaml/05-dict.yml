@@ -1,0 +1,9 @@
+---
+fruitcolors:
+  apple: red
+  orange: 
+   - bright_orange
+   - light_orange
+   - yellowish_orange
+  mango: yellow
+...

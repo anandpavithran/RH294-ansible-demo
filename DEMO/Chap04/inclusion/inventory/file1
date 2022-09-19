@@ -1,0 +1,8 @@
+[local]
+localhost
+
+[remote]
+servera.lab.example.com #foo=FOO_from_INVENTORY
+
+[remote:vars]
+foo=FOO_from_INV-GROUP

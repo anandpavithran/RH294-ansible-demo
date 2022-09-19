@@ -1,0 +1,10 @@
+- name: Play to demo logging
+  hosts: servera.lab.example.com
+  tasks:
+  - name: Task to install a package.
+    yum:
+      name: vsftpd
+      state: latest
+  - name: Task to start vsftpd.
+    stat:
+      path: /etc/vsftpd

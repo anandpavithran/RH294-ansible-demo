@@ -1,0 +1,11 @@
+---
+- name: local play
+  hosts: local
+  vars:
+    test: value_from_playbook
+  tasks:
+  - name: message
+    debug:
+      msg: "The value of test is {{test}}"
+
+...

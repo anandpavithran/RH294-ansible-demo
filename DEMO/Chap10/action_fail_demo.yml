@@ -1,0 +1,8 @@
+- name: Play to demo action & stat 
+  hosts: localhost
+  tasks:
+  - name: Task1
+    action: uri url=http://content.example.com
+    register: action_out
+  - debug:
+      var: action_out

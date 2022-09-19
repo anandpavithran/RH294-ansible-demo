@@ -1,0 +1,15 @@
+---
+- name: Play with a log running task
+  hosts: serverb.lab.example.com
+  tasks:
+  - name: Long task to run on a managed hosts.
+    shell: sleep 10 && touch /tmp/task1-$(date +%H:%M:%S).done
+    async: 6
+    poll: 3
+    ignore_errors: yes
+   
+  - name: Task no. 2
+    shell: sleep 2 && touch /tmp/task2-$(date +%H:%M:%S).done
+  
+  - name: Task no. 3
+    shell: sleep 2 && touch /tmp/task3-$(date +%H:%M:%S).done

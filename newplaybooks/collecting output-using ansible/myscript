@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "<html>" >> /var/www/html/index.html
+date  >> /var/www/html/index.html
+echo "<br/>" >> /var/www/html/index.html
+for i in localhost servera.lab.example.com serverb.lab.example.com serverc.lab.example.com serverd.lab.example.com 
+do
+cat /tmp/$i/tmp/details >> /var/www/html/index.html
+echo "<br/>" >> /var/www/html/index.html
+done
+echo "</html>" >> /var/www/html/index.html

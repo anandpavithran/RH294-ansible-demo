@@ -1,0 +1,12 @@
+---
+- name: Remote whoami
+  hosts: remote
+  become: no
+  tasks:
+  - name: Hey who am I?
+    shell: whoami
+    register: command_out
+  - name: Displaying the std_out of whoami
+    debug:
+      var: command_out.rc
+...

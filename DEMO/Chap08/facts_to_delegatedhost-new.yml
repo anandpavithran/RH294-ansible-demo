@@ -1,0 +1,8 @@
+---
+- name: Play to demo the value of facts on a delegated host
+  hosts: servera.lab.example.com
+  tasks:
+  - name: Task to run a command on a delegated host.
+    shell: "echo -ne 'The value of ansible_fqdn : {{ansible_fqdn}}\n' > /tmp/delegate_demo"
+    delegate_to: serverb.lab.example.com
+    delegate_facts: False

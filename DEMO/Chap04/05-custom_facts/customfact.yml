@@ -1,0 +1,8 @@
+---
+- name: Custom facts demo
+  hosts: servera.lab.example.com
+  tasks:
+  - name: Display hardware asses tag
+    debug:
+     msg: "The server {{ansible_hostname}}'s asset id is {{ansible_local.hardware.asset.id}}"
+...

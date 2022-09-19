@@ -1,0 +1,13 @@
+---
+  - hosts: all
+    become: True
+    remote_user: devops
+    tasks:
+      - name: Install httpd
+        yum: name=httpd state=latest
+        tags: web
+
+      - name: Install vsftpd
+        yum: name=vsftpd state=latest
+        tags: myftp
+

@@ -1,0 +1,32 @@
+---
+- hosts: servera.lab.example.com
+  force_handlers: yes
+  tasks:
+  - name: Copy the script which is a pre-req for the demo
+    copy:
+      src: force_handler_files/app-test
+      dest: /usr/local/bin
+      owner: root
+      mode: 0755
+  
+  - name: Task to configure App-One
+    debug:
+      msg: "SUCCESS"
+    register: app1_mesg
+    changed_when: "'SUCCESS' in app1_mesg.msg"
+    notify: restart_app1
+
+  - name: Task to configure App-Two
+    command: /usr/local/bin/app-test
+    register: app2_mesg
+    failed_when: "'DB_fail' in app2_mesg.stdout_lines"
+    notify: restart_app2
+  
+  handlers:
+  - name: restart_app1
+    debug:
+      msg: "app-ONE is restarted on {{ansible_hostname}}"
+
+  - name: restart_app2
+    debug:
+      msg: "app-TWO is restarted on {{ansible_hostname}}"

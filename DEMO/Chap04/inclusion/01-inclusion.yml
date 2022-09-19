@@ -1,0 +1,9 @@
+---
+- name: Inclusion demo
+  hosts: servera.lab.example.com
+  tasks:
+  - name: Include the vars
+    include_vars: myvars/servera.yml
+  
+  - name: Include the tasks
+    include: mytasks/install.yml

@@ -1,0 +1,2 @@
+# ignore retry files generated while playbook runs.
+*.retry

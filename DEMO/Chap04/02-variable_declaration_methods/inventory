@@ -1,0 +1,6 @@
+[local]
+localhost var1=value1_from_inventory
+
+[remote]
+servera.lab.example.com
+

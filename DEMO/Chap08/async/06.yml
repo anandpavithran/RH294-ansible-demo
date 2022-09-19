@@ -1,0 +1,23 @@
+---
+- name: Play with a log running task
+  hosts: serverb.lab.example.com
+  tasks:
+  - name: Long task to run on a managed hosts.
+    shell: sleep 10 && systemctl start httpd
+    async: 1
+    poll: 0
+
+  - name: waiting for task1 to complete.
+    wait_for:
+      host: serverb.lab.example.com
+      port: 80
+      state: started
+      delay: 5
+      timeout: 20
+
+   
+  - name: Task no. 2
+    shell: sleep 2 && touch /tmp/task2.done
+  
+  - name: Task no. 3
+    shell: sleep 2 && touch /tmp/task3.done

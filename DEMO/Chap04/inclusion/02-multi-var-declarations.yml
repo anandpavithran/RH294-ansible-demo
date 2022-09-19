@@ -1,0 +1,16 @@
+---
+- name: Variable Inclusion precedence demo.
+  hosts: servera.lab.example.com
+#  vars:
+#    foo: FOO_from_PLAY
+#  vars_files:
+#    - myvars/vars-files.yml
+  tasks:
+#  - name: Include the vars
+#    include_vars: myvars/include-vars.yml
+
+  - name: Include the tasks
+#    vars:
+#      foo: FOO_from_TASK
+    include: mytasks/show-var.yml
+  

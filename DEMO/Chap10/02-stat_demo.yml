@@ -1,0 +1,14 @@
+- name: Play to demo state module
+  hosts: servera.lab.example.com
+  tasks:
+  - name: Task1
+    stat:
+      path: /etc/motd1
+    register: stat_out
+  - debug:
+      var: stat_out
+  - assert:
+      that:
+        - stat_out.stat.exists
+  - name: Task2
+    command: "ls /tmp"

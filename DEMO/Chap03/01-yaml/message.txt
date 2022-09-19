@@ -1,0 +1,22 @@
+A sample list 
+---
+fruits:
+- orange
+- apple
+- mango
+...
+
+A sample dictionary 
+---
+fruitcolors:
+  apple: red
+  orange: orange
+  mango: yellow
+...
+
+List items have a '-''space' at the start 
+Dictionary items will have <key>':''space' <value>
+
+
+
+

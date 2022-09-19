@@ -1,0 +1,611 @@
+2017-09-25 17:16:43,073 p=6133 u=student |  PLAY [Play 1 to deploy webserver] **********************************************
+2017-09-25 17:16:43,117 p=6133 u=student |  TASK [Gathering Facts] *********************************************************
+2017-09-25 17:16:44,097 p=6133 u=student |  ok: [servera.lab.example.com]
+2017-09-25 17:16:44,101 p=6133 u=student |  TASK [Install package] *********************************************************
+2017-09-25 17:16:44,803 p=6133 u=student |  changed: [servera.lab.example.com]
+2017-09-25 17:16:44,807 p=6133 u=student |  TASK [Deliver webpage] *********************************************************
+2017-09-25 17:16:45,268 p=6133 u=student |  changed: [servera.lab.example.com]
+2017-09-25 17:16:45,272 p=6133 u=student |  TASK [Enable and restart SERVICE] **********************************************
+2017-09-25 17:16:45,679 p=6133 u=student |  changed: [servera.lab.example.com]
+2017-09-25 17:16:45,682 p=6133 u=student |  TASK [OPEN THE FIREWALL port] **************************************************
+2017-09-25 17:16:46,357 p=6133 u=student |  changed: [servera.lab.example.com]
+2017-09-25 17:16:46,362 p=6133 u=student |  PLAY [Play 2 to deploy webserver] **********************************************
+2017-09-25 17:16:46,365 p=6133 u=student |  TASK [Gathering Facts] *********************************************************
+2017-09-25 17:16:47,110 p=6133 u=student |  ok: [serverb.lab.example.com]
+2017-09-25 17:16:47,113 p=6133 u=student |  TASK [Install package] *********************************************************
+2017-09-25 17:16:47,657 p=6133 u=student |  changed: [serverb.lab.example.com]
+2017-09-25 17:16:47,661 p=6133 u=student |  TASK [Deliver webpage] *********************************************************
+2017-09-25 17:16:48,015 p=6133 u=student |  changed: [serverb.lab.example.com]
+2017-09-25 17:16:48,018 p=6133 u=student |  TASK [Enable and restart SERVICE] **********************************************
+2017-09-25 17:16:48,316 p=6133 u=student |  changed: [serverb.lab.example.com]
+2017-09-25 17:16:48,320 p=6133 u=student |  TASK [OPEN THE FIREWALL port] **************************************************
+2017-09-25 17:16:48,877 p=6133 u=student |  changed: [serverb.lab.example.com]
+2017-09-25 17:16:48,878 p=6133 u=student |  PLAY RECAP *********************************************************************
+2017-09-25 17:16:48,879 p=6133 u=student |  servera.lab.example.com    : ok=5    changed=4    unreachable=0    failed=0   
+2017-09-25 17:16:48,879 p=6133 u=student |  serverb.lab.example.com    : ok=5    changed=4    unreachable=0    failed=0   
+2017-09-25 17:18:16,837 p=6270 u=student |  Using /home/student/myfirst/ansible.cfg as config file
+2017-09-25 17:18:16,985 p=6270 u=student |  PLAY [Play 1 to deploy webserver] **********************************************
+2017-09-25 17:18:17,032 p=6270 u=student |  TASK [Gathering Facts] *********************************************************
+2017-09-25 17:18:18,014 p=6270 u=student |  ok: [servera.lab.example.com]
+2017-09-25 17:18:18,018 p=6270 u=student |  TASK [Install package] *********************************************************
+2017-09-25 17:18:18,727 p=6270 u=student |  changed: [servera.lab.example.com] => {"changed": true, "changes": {"installed": ["httpd"]}, "results": []}
+2017-09-25 17:18:18,731 p=6270 u=student |  TASK [Deliver webpage] *********************************************************
+2017-09-25 17:18:19,207 p=6270 u=student |  changed: [servera.lab.example.com] => {"changed": true, "dest": "/var/www/html/index.html", "src": "/tmp/tmpjeLO9Y"}
+2017-09-25 17:18:19,211 p=6270 u=student |  TASK [Enable and restart SERVICE] **********************************************
+2017-09-25 17:18:19,627 p=6270 u=student |  changed: [servera.lab.example.com] => {"changed": true, "msg": "Service httpd not found on host, assuming it will exist on full run"}
+2017-09-25 17:18:19,630 p=6270 u=student |  TASK [OPEN THE FIREWALL port] **************************************************
+2017-09-25 17:18:20,304 p=6270 u=student |  changed: [servera.lab.example.com] => {"changed": true}
+2017-09-25 17:18:20,310 p=6270 u=student |  PLAY [Play 2 to deploy webserver] **********************************************
+2017-09-25 17:18:20,313 p=6270 u=student |  TASK [Gathering Facts] *********************************************************
+2017-09-25 17:18:21,061 p=6270 u=student |  ok: [serverb.lab.example.com]
+2017-09-25 17:18:21,064 p=6270 u=student |  TASK [Install package] *********************************************************
+2017-09-25 17:18:21,608 p=6270 u=student |  changed: [serverb.lab.example.com] => {"changed": true, "changes": {"installed": ["httpd"]}, "results": []}
+2017-09-25 17:18:21,611 p=6270 u=student |  TASK [Deliver webpage] *********************************************************
+2017-09-25 17:18:21,967 p=6270 u=student |  changed: [serverb.lab.example.com] => {"changed": true, "dest": "/var/www/html/index.html", "src": "/tmp/tmpQOljyv"}
+2017-09-25 17:18:21,970 p=6270 u=student |  TASK [Enable and restart SERVICE] **********************************************
+2017-09-25 17:18:22,271 p=6270 u=student |  changed: [serverb.lab.example.com] => {"changed": true, "msg": "Service httpd not found on host, assuming it will exist on full run"}
+2017-09-25 17:18:22,274 p=6270 u=student |  TASK [OPEN THE FIREWALL port] **************************************************
+2017-09-25 17:18:22,823 p=6270 u=student |  changed: [serverb.lab.example.com] => {"changed": true}
+2017-09-25 17:18:22,826 p=6270 u=student |  PLAY RECAP *********************************************************************
+2017-09-25 17:18:22,826 p=6270 u=student |  servera.lab.example.com    : ok=5    changed=4    unreachable=0    failed=0   
+2017-09-25 17:18:22,826 p=6270 u=student |  serverb.lab.example.com    : ok=5    changed=4    unreachable=0    failed=0   
+2017-09-25 17:18:27,230 p=6373 u=student |  Using /home/student/myfirst/ansible.cfg as config file
+2017-09-25 17:18:27,352 p=6373 u=student |  PLAYBOOK: first.yaml ***********************************************************
+2017-09-25 17:18:27,353 p=6373 u=student |  2 plays in first.yaml
+2017-09-25 17:18:27,376 p=6373 u=student |  PLAY [Play 1 to deploy webserver] **********************************************
+2017-09-25 17:18:27,421 p=6373 u=student |  TASK [Gathering Facts] *********************************************************
+2017-09-25 17:18:28,062 p=6373 u=student |  ok: [servera.lab.example.com]
+2017-09-25 17:18:28,063 p=6373 u=student |  META: ran handlers
+2017-09-25 17:18:28,066 p=6373 u=student |  TASK [Install package] *********************************************************
+2017-09-25 17:18:28,066 p=6373 u=student |  task path: /home/student/myfirst/first.yaml:7
+2017-09-25 17:18:28,767 p=6373 u=student |  changed: [servera.lab.example.com] => {"changed": true, "changes": {"installed": ["httpd"]}, "results": []}
+2017-09-25 17:18:28,771 p=6373 u=student |  TASK [Deliver webpage] *********************************************************
+2017-09-25 17:18:28,771 p=6373 u=student |  task path: /home/student/myfirst/first.yaml:9
+2017-09-25 17:18:29,243 p=6373 u=student |  changed: [servera.lab.example.com] => {"changed": true, "dest": "/var/www/html/index.html", "src": "/tmp/tmpcqt1mn"}
+2017-09-25 17:18:29,247 p=6373 u=student |  TASK [Enable and restart SERVICE] **********************************************
+2017-09-25 17:18:29,247 p=6373 u=student |  task path: /home/student/myfirst/first.yaml:11
+2017-09-25 17:18:29,660 p=6373 u=student |  changed: [servera.lab.example.com] => {"changed": true, "msg": "Service httpd not found on host, assuming it will exist on full run"}
+2017-09-25 17:18:29,663 p=6373 u=student |  TASK [OPEN THE FIREWALL port] **************************************************
+2017-09-25 17:18:29,663 p=6373 u=student |  task path: /home/student/myfirst/first.yaml:13
+2017-09-25 17:18:30,330 p=6373 u=student |  changed: [servera.lab.example.com] => {"changed": true}
+2017-09-25 17:18:30,330 p=6373 u=student |  META: ran handlers
+2017-09-25 17:18:30,331 p=6373 u=student |  META: ran handlers
+2017-09-25 17:18:30,335 p=6373 u=student |  PLAY [Play 2 to deploy webserver] **********************************************
+2017-09-25 17:18:30,339 p=6373 u=student |  TASK [Gathering Facts] *********************************************************
+2017-09-25 17:18:30,759 p=6373 u=student |  ok: [serverb.lab.example.com]
+2017-09-25 17:18:30,760 p=6373 u=student |  META: ran handlers
+2017-09-25 17:18:30,763 p=6373 u=student |  TASK [Install package] *********************************************************
+2017-09-25 17:18:30,763 p=6373 u=student |  task path: /home/student/myfirst/first.yaml:21
+2017-09-25 17:18:31,311 p=6373 u=student |  changed: [serverb.lab.example.com] => {"changed": true, "changes": {"installed": ["httpd"]}, "results": []}
+2017-09-25 17:18:31,314 p=6373 u=student |  TASK [Deliver webpage] *********************************************************
+2017-09-25 17:18:31,314 p=6373 u=student |  task path: /home/student/myfirst/first.yaml:23
+2017-09-25 17:18:31,674 p=6373 u=student |  changed: [serverb.lab.example.com] => {"changed": true, "dest": "/var/www/html/index.html", "src": "/tmp/tmpuxQB2E"}
+2017-09-25 17:18:31,678 p=6373 u=student |  TASK [Enable and restart SERVICE] **********************************************
+2017-09-25 17:18:31,678 p=6373 u=student |  task path: /home/student/myfirst/first.yaml:25
+2017-09-25 17:18:31,976 p=6373 u=student |  changed: [serverb.lab.example.com] => {"changed": true, "msg": "Service httpd not found on host, assuming it will exist on full run"}
+2017-09-25 17:18:31,980 p=6373 u=student |  TASK [OPEN THE FIREWALL port] **************************************************
+2017-09-25 17:18:31,980 p=6373 u=student |  task path: /home/student/myfirst/first.yaml:27
+2017-09-25 17:18:32,520 p=6373 u=student |  changed: [serverb.lab.example.com] => {"changed": true}
+2017-09-25 17:18:32,521 p=6373 u=student |  META: ran handlers
+2017-09-25 17:18:32,521 p=6373 u=student |  META: ran handlers
+2017-09-25 17:18:32,522 p=6373 u=student |  PLAY RECAP *********************************************************************
+2017-09-25 17:18:32,522 p=6373 u=student |  servera.lab.example.com    : ok=5    changed=4    unreachable=0    failed=0   
+2017-09-25 17:18:32,522 p=6373 u=student |  serverb.lab.example.com    : ok=5    changed=4    unreachable=0    failed=0   
+2017-09-25 17:18:36,344 p=6470 u=student |  Using /home/student/myfirst/ansible.cfg as config file
+2017-09-25 17:18:36,466 p=6470 u=student |  PLAYBOOK: first.yaml ***********************************************************
+2017-09-25 17:18:36,467 p=6470 u=student |  2 plays in first.yaml
+2017-09-25 17:18:36,492 p=6470 u=student |  PLAY [Play 1 to deploy webserver] **********************************************
+2017-09-25 17:18:36,537 p=6470 u=student |  TASK [Gathering Facts] *********************************************************
+2017-09-25 17:18:36,782 p=6470 u=student |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/setup.py
+2017-09-25 17:18:37,187 p=6470 u=student |  ok: [servera.lab.example.com]
+2017-09-25 17:18:37,188 p=6470 u=student |  META: ran handlers
+2017-09-25 17:18:37,191 p=6470 u=student |  TASK [Install package] *********************************************************
+2017-09-25 17:18:37,191 p=6470 u=student |  task path: /home/student/myfirst/first.yaml:7
+2017-09-25 17:18:37,366 p=6470 u=student |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2017-09-25 17:18:37,911 p=6470 u=student |  changed: [servera.lab.example.com] => {
+    "changed": true, 
+    "changes": {
+        "installed": [
+            "httpd"
+        ]
+    }, 
+    "invocation": {
+        "module_args": {
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "httpd"
+            ], 
+            "skip_broken": false, 
+            "state": "present", 
+            "update_cache": false, 
+            "validate_certs": true
+        }
+    }, 
+    "results": []
+}
+2017-09-25 17:18:37,916 p=6470 u=student |  TASK [Deliver webpage] *********************************************************
+2017-09-25 17:18:37,916 p=6470 u=student |  task path: /home/student/myfirst/first.yaml:9
+2017-09-25 17:18:38,047 p=6470 u=student |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+2017-09-25 17:18:38,412 p=6470 u=student |  changed: [servera.lab.example.com] => {
+    "changed": true, 
+    "dest": "/var/www/html/index.html", 
+    "src": "/tmp/tmp0Vy_ub"
+}
+2017-09-25 17:18:38,416 p=6470 u=student |  TASK [Enable and restart SERVICE] **********************************************
+2017-09-25 17:18:38,416 p=6470 u=student |  task path: /home/student/myfirst/first.yaml:11
+2017-09-25 17:18:38,550 p=6470 u=student |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/systemd.py
+2017-09-25 17:18:38,842 p=6470 u=student |  changed: [servera.lab.example.com] => {
+    "changed": true, 
+    "invocation": {
+        "module_args": {
+            "daemon_reload": false, 
+            "enabled": true, 
+            "masked": null, 
+            "name": "httpd", 
+            "no_block": false, 
+            "state": "started", 
+            "user": false
+        }
+    }, 
+    "msg": "Service httpd not found on host, assuming it will exist on full run"
+}
+2017-09-25 17:18:38,846 p=6470 u=student |  TASK [OPEN THE FIREWALL port] **************************************************
+2017-09-25 17:18:38,847 p=6470 u=student |  task path: /home/student/myfirst/first.yaml:13
+2017-09-25 17:18:38,989 p=6470 u=student |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/firewalld.py
+2017-09-25 17:18:39,536 p=6470 u=student |  changed: [servera.lab.example.com] => {
+    "changed": true, 
+    "invocation": {
+        "module_args": {
+            "immediate": true, 
+            "interface": null, 
+            "masquerade": null, 
+            "offline": null, 
+            "permanent": true, 
+            "port": null, 
+            "rich_rule": null, 
+            "service": "http", 
+            "source": null, 
+            "state": "enabled", 
+            "timeout": 0, 
+            "zone": null
+        }
+    }
+}
+2017-09-25 17:18:39,537 p=6470 u=student |  META: ran handlers
+2017-09-25 17:18:39,537 p=6470 u=student |  META: ran handlers
+2017-09-25 17:18:39,542 p=6470 u=student |  PLAY [Play 2 to deploy webserver] **********************************************
+2017-09-25 17:18:39,547 p=6470 u=student |  TASK [Gathering Facts] *********************************************************
+2017-09-25 17:18:39,563 p=6470 u=student |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/setup.py
+2017-09-25 17:18:39,969 p=6470 u=student |  ok: [serverb.lab.example.com]
+2017-09-25 17:18:39,969 p=6470 u=student |  META: ran handlers
+2017-09-25 17:18:39,973 p=6470 u=student |  TASK [Install package] *********************************************************
+2017-09-25 17:18:39,974 p=6470 u=student |  task path: /home/student/myfirst/first.yaml:21
+2017-09-25 17:18:39,990 p=6470 u=student |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2017-09-25 17:18:40,537 p=6470 u=student |  changed: [serverb.lab.example.com] => {
+    "changed": true, 
+    "changes": {
+        "installed": [
+            "httpd"
+        ]
+    }, 
+    "invocation": {
+        "module_args": {
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "httpd"
+            ], 
+            "skip_broken": false, 
+            "state": "present", 
+            "update_cache": false, 
+            "validate_certs": true
+        }
+    }, 
+    "results": []
+}
+2017-09-25 17:18:40,541 p=6470 u=student |  TASK [Deliver webpage] *********************************************************
+2017-09-25 17:18:40,541 p=6470 u=student |  task path: /home/student/myfirst/first.yaml:23
+2017-09-25 17:18:40,557 p=6470 u=student |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+2017-09-25 17:18:40,915 p=6470 u=student |  changed: [serverb.lab.example.com] => {
+    "changed": true, 
+    "dest": "/var/www/html/index.html", 
+    "src": "/tmp/tmpX8FJLk"
+}
+2017-09-25 17:18:40,919 p=6470 u=student |  TASK [Enable and restart SERVICE] **********************************************
+2017-09-25 17:18:40,919 p=6470 u=student |  task path: /home/student/myfirst/first.yaml:25
+2017-09-25 17:18:40,938 p=6470 u=student |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/systemd.py
+2017-09-25 17:18:41,229 p=6470 u=student |  changed: [serverb.lab.example.com] => {
+    "changed": true, 
+    "invocation": {
+        "module_args": {
+            "daemon_reload": false, 
+            "enabled": true, 
+            "masked": null, 
+            "name": "httpd", 
+            "no_block": false, 
+            "state": "started", 
+            "user": false
+        }
+    }, 
+    "msg": "Service httpd not found on host, assuming it will exist on full run"
+}
+2017-09-25 17:18:41,233 p=6470 u=student |  TASK [OPEN THE FIREWALL port] **************************************************
+2017-09-25 17:18:41,233 p=6470 u=student |  task path: /home/student/myfirst/first.yaml:27
+2017-09-25 17:18:41,249 p=6470 u=student |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/firewalld.py
+2017-09-25 17:18:41,798 p=6470 u=student |  changed: [serverb.lab.example.com] => {
+    "changed": true, 
+    "invocation": {
+        "module_args": {
+            "immediate": true, 
+            "interface": null, 
+            "masquerade": null, 
+            "offline": null, 
+            "permanent": true, 
+            "port": null, 
+            "rich_rule": null, 
+            "service": "http", 
+            "source": null, 
+            "state": "enabled", 
+            "timeout": 0, 
+            "zone": null
+        }
+    }
+}
+2017-09-25 17:18:41,799 p=6470 u=student |  META: ran handlers
+2017-09-25 17:18:41,799 p=6470 u=student |  META: ran handlers
+2017-09-25 17:18:41,800 p=6470 u=student |  PLAY RECAP *********************************************************************
+2017-09-25 17:18:41,800 p=6470 u=student |  servera.lab.example.com    : ok=5    changed=4    unreachable=0    failed=0   
+2017-09-25 17:18:41,800 p=6470 u=student |  serverb.lab.example.com    : ok=5    changed=4    unreachable=0    failed=0   
+2017-09-25 17:18:50,097 p=6567 u=student |  Using /home/student/myfirst/ansible.cfg as config file
+2017-09-25 17:18:50,165 p=6567 u=student |  Loading callback plugin default of type stdout, v2.0 from /usr/lib/python2.7/site-packages/ansible/plugins/callback/__init__.pyc
+2017-09-25 17:18:50,222 p=6567 u=student |  PLAYBOOK: first.yaml ***********************************************************
+2017-09-25 17:18:50,222 p=6567 u=student |  2 plays in first.yaml
+2017-09-25 17:18:50,248 p=6567 u=student |  PLAY [Play 1 to deploy webserver] **********************************************
+2017-09-25 17:18:50,295 p=6567 u=student |  TASK [Gathering Facts] *********************************************************
+2017-09-25 17:18:50,539 p=6567 u=student |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/setup.py
+2017-09-25 17:18:50,949 p=6567 u=student |  ok: [servera.lab.example.com]
+2017-09-25 17:18:50,949 p=6567 u=student |  META: ran handlers
+2017-09-25 17:18:50,953 p=6567 u=student |  TASK [Install package] *********************************************************
+2017-09-25 17:18:50,953 p=6567 u=student |  task path: /home/student/myfirst/first.yaml:7
+2017-09-25 17:18:51,129 p=6567 u=student |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2017-09-25 17:18:51,676 p=6567 u=student |  changed: [servera.lab.example.com] => {
+    "changed": true, 
+    "changes": {
+        "installed": [
+            "httpd"
+        ]
+    }, 
+    "invocation": {
+        "module_args": {
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "httpd"
+            ], 
+            "skip_broken": false, 
+            "state": "present", 
+            "update_cache": false, 
+            "validate_certs": true
+        }
+    }, 
+    "results": []
+}
+2017-09-25 17:18:51,681 p=6567 u=student |  TASK [Deliver webpage] *********************************************************
+2017-09-25 17:18:51,681 p=6567 u=student |  task path: /home/student/myfirst/first.yaml:9
+2017-09-25 17:18:51,810 p=6567 u=student |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+2017-09-25 17:18:52,175 p=6567 u=student |  changed: [servera.lab.example.com] => {
+    "changed": true, 
+    "dest": "/var/www/html/index.html", 
+    "src": "/tmp/tmpAG0Pjy"
+}
+2017-09-25 17:18:52,179 p=6567 u=student |  TASK [Enable and restart SERVICE] **********************************************
+2017-09-25 17:18:52,179 p=6567 u=student |  task path: /home/student/myfirst/first.yaml:11
+2017-09-25 17:18:52,196 p=6567 u=student |  Running systemd
+2017-09-25 17:18:52,315 p=6567 u=student |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/systemd.py
+2017-09-25 17:18:52,613 p=6567 u=student |  changed: [servera.lab.example.com] => {
+    "changed": true, 
+    "invocation": {
+        "module_args": {
+            "daemon_reload": false, 
+            "enabled": true, 
+            "masked": null, 
+            "name": "httpd", 
+            "no_block": false, 
+            "state": "started", 
+            "user": false
+        }
+    }, 
+    "msg": "Service httpd not found on host, assuming it will exist on full run"
+}
+2017-09-25 17:18:52,617 p=6567 u=student |  TASK [OPEN THE FIREWALL port] **************************************************
+2017-09-25 17:18:52,617 p=6567 u=student |  task path: /home/student/myfirst/first.yaml:13
+2017-09-25 17:18:52,760 p=6567 u=student |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/firewalld.py
+2017-09-25 17:18:53,323 p=6567 u=student |  changed: [servera.lab.example.com] => {
+    "changed": true, 
+    "invocation": {
+        "module_args": {
+            "immediate": true, 
+            "interface": null, 
+            "masquerade": null, 
+            "offline": null, 
+            "permanent": true, 
+            "port": null, 
+            "rich_rule": null, 
+            "service": "http", 
+            "source": null, 
+            "state": "enabled", 
+            "timeout": 0, 
+            "zone": null
+        }
+    }
+}
+2017-09-25 17:18:53,323 p=6567 u=student |  META: ran handlers
+2017-09-25 17:18:53,324 p=6567 u=student |  META: ran handlers
+2017-09-25 17:18:53,328 p=6567 u=student |  PLAY [Play 2 to deploy webserver] **********************************************
+2017-09-25 17:18:53,333 p=6567 u=student |  TASK [Gathering Facts] *********************************************************
+2017-09-25 17:18:53,350 p=6567 u=student |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/setup.py
+2017-09-25 17:18:53,802 p=6567 u=student |  ok: [serverb.lab.example.com]
+2017-09-25 17:18:53,802 p=6567 u=student |  META: ran handlers
+2017-09-25 17:18:53,807 p=6567 u=student |  TASK [Install package] *********************************************************
+2017-09-25 17:18:53,807 p=6567 u=student |  task path: /home/student/myfirst/first.yaml:21
+2017-09-25 17:18:53,824 p=6567 u=student |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2017-09-25 17:18:54,371 p=6567 u=student |  changed: [serverb.lab.example.com] => {
+    "changed": true, 
+    "changes": {
+        "installed": [
+            "httpd"
+        ]
+    }, 
+    "invocation": {
+        "module_args": {
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "httpd"
+            ], 
+            "skip_broken": false, 
+            "state": "present", 
+            "update_cache": false, 
+            "validate_certs": true
+        }
+    }, 
+    "results": []
+}
+2017-09-25 17:18:54,375 p=6567 u=student |  TASK [Deliver webpage] *********************************************************
+2017-09-25 17:18:54,375 p=6567 u=student |  task path: /home/student/myfirst/first.yaml:23
+2017-09-25 17:18:54,392 p=6567 u=student |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+2017-09-25 17:18:54,751 p=6567 u=student |  changed: [serverb.lab.example.com] => {
+    "changed": true, 
+    "dest": "/var/www/html/index.html", 
+    "src": "/tmp/tmph4FIqH"
+}
+2017-09-25 17:18:54,755 p=6567 u=student |  TASK [Enable and restart SERVICE] **********************************************
+2017-09-25 17:18:54,755 p=6567 u=student |  task path: /home/student/myfirst/first.yaml:25
+2017-09-25 17:18:54,772 p=6567 u=student |  Running systemd
+2017-09-25 17:18:54,773 p=6567 u=student |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/systemd.py
+2017-09-25 17:18:55,065 p=6567 u=student |  changed: [serverb.lab.example.com] => {
+    "changed": true, 
+    "invocation": {
+        "module_args": {
+            "daemon_reload": false, 
+            "enabled": true, 
+            "masked": null, 
+            "name": "httpd", 
+            "no_block": false, 
+            "state": "started", 
+            "user": false
+        }
+    }, 
+    "msg": "Service httpd not found on host, assuming it will exist on full run"
+}
+2017-09-25 17:18:55,069 p=6567 u=student |  TASK [OPEN THE FIREWALL port] **************************************************
+2017-09-25 17:18:55,069 p=6567 u=student |  task path: /home/student/myfirst/first.yaml:27
+2017-09-25 17:18:55,085 p=6567 u=student |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/firewalld.py
+2017-09-25 17:18:55,643 p=6567 u=student |  changed: [serverb.lab.example.com] => {
+    "changed": true, 
+    "invocation": {
+        "module_args": {
+            "immediate": true, 
+            "interface": null, 
+            "masquerade": null, 
+            "offline": null, 
+            "permanent": true, 
+            "port": null, 
+            "rich_rule": null, 
+            "service": "http", 
+            "source": null, 
+            "state": "enabled", 
+            "timeout": 0, 
+            "zone": null
+        }
+    }
+}
+2017-09-25 17:18:55,644 p=6567 u=student |  META: ran handlers
+2017-09-25 17:18:55,644 p=6567 u=student |  META: ran handlers
+2017-09-25 17:18:55,645 p=6567 u=student |  PLAY RECAP *********************************************************************
+2017-09-25 17:18:55,645 p=6567 u=student |  servera.lab.example.com    : ok=5    changed=4    unreachable=0    failed=0   
+2017-09-25 17:18:55,645 p=6567 u=student |  serverb.lab.example.com    : ok=5    changed=4    unreachable=0    failed=0   
+2017-09-25 17:19:31,616 p=6672 u=student |  PLAY [Play 1 to deploy webserver] **********************************************
+2017-09-25 17:19:45,768 p=6672 u=student |  Perform task: TASK: Gathering Facts (N)o/(y)es/(c)ontinue: *********************
+2017-09-25 17:19:45,770 p=6672 u=student |  TASK [Gathering Facts] *********************************************************
+2017-09-25 17:19:46,405 p=6672 u=student |  ok: [servera.lab.example.com]
+2017-09-25 17:19:52,650 p=6672 u=student |  Perform task: TASK: Install package (N)o/(y)es/(c)ontinue: *********************
+2017-09-25 17:19:52,653 p=6672 u=student |  TASK [Install package] *********************************************************
+2017-09-25 17:19:53,363 p=6672 u=student |  changed: [servera.lab.example.com]
+2017-09-25 17:19:58,559 p=6672 u=student |  Perform task: TASK: Deliver webpage (N)o/(y)es/(c)ontinue: *********************
+2017-09-25 17:19:58,561 p=6672 u=student |  TASK [Deliver webpage] *********************************************************
+2017-09-25 17:19:59,028 p=6672 u=student |  changed: [servera.lab.example.com]
+2017-09-25 17:19:59,032 p=6672 u=student |  TASK [Enable and restart SERVICE] **********************************************
+2017-09-25 17:19:59,446 p=6672 u=student |  changed: [servera.lab.example.com]
+2017-09-25 17:19:59,450 p=6672 u=student |  TASK [OPEN THE FIREWALL port] **************************************************
+2017-09-25 17:20:00,125 p=6672 u=student |  changed: [servera.lab.example.com]
+2017-09-25 17:20:00,131 p=6672 u=student |  PLAY [Play 2 to deploy webserver] **********************************************
+2017-09-25 17:20:03,742 p=6672 u=student |  Perform task: TASK: Gathering Facts (N)o/(y)es/(c)ontinue: *********************
+2017-09-25 17:20:03,744 p=6672 u=student |  TASK [Gathering Facts] *********************************************************
+2017-09-25 17:20:04,508 p=6672 u=student |  ok: [serverb.lab.example.com]
+2017-09-25 17:20:04,512 p=6672 u=student |  TASK [Install package] *********************************************************
+2017-09-25 17:20:05,065 p=6672 u=student |  changed: [serverb.lab.example.com]
+2017-09-25 17:20:05,069 p=6672 u=student |  TASK [Deliver webpage] *********************************************************
+2017-09-25 17:20:05,428 p=6672 u=student |  changed: [serverb.lab.example.com]
+2017-09-25 17:20:05,432 p=6672 u=student |  TASK [Enable and restart SERVICE] **********************************************
+2017-09-25 17:20:05,732 p=6672 u=student |  changed: [serverb.lab.example.com]
+2017-09-25 17:20:05,735 p=6672 u=student |  TASK [OPEN THE FIREWALL port] **************************************************
+2017-09-25 17:20:06,313 p=6672 u=student |  changed: [serverb.lab.example.com]
+2017-09-25 17:20:06,316 p=6672 u=student |  PLAY RECAP *********************************************************************
+2017-09-25 17:20:06,317 p=6672 u=student |  servera.lab.example.com    : ok=5    changed=4    unreachable=0    failed=0   
+2017-09-25 17:20:06,317 p=6672 u=student |  serverb.lab.example.com    : ok=5    changed=4    unreachable=0    failed=0   
+2017-09-25 17:23:32,254 p=6869 u=student |  PLAY [servera.lab.example.com] *************************************************
+2017-09-25 17:23:32,300 p=6869 u=student |  TASK [Gathering Facts] *********************************************************
+2017-09-25 17:23:33,467 p=6869 u=student |  ok: [localhost]
+2017-09-25 17:23:33,471 p=6869 u=student |  TASK [command to run] **********************************************************
+2017-09-25 17:23:33,858 p=6869 u=student |  changed: [localhost]
+2017-09-25 17:23:33,862 p=6869 u=student |  TASK [debug] *******************************************************************
+2017-09-25 17:23:33,883 p=6869 u=student |  ok: [localhost] => {
+    "apple": {
+        "changed": true, 
+        "cmd": [
+            "ls", 
+            "/home/student/myfirst"
+        ], 
+        "delta": "0:00:00.002899", 
+        "end": "2017-09-25 17:23:33.838459", 
+        "rc": 0, 
+        "start": "2017-09-25 17:23:33.835560", 
+        "stderr": "", 
+        "stderr_lines": [], 
+        "stdout": "ansible.cfg\nansible.log\nfirst.yaml\ninventory\nsecond.yaml", 
+        "stdout_lines": [
+            "ansible.cfg", 
+            "ansible.log", 
+            "first.yaml", 
+            "inventory", 
+            "second.yaml"
+        ]
+    }
+}
+2017-09-25 17:23:33,885 p=6869 u=student |  PLAY RECAP *********************************************************************
+2017-09-25 17:23:33,885 p=6869 u=student |  localhost                  : ok=3    changed=1    unreachable=0    failed=0   
+2017-09-25 17:27:03,605 p=7140 u=student |  PLAY [Play 1 to deploy webserver] **********************************************
+2017-09-25 17:27:03,652 p=7140 u=student |  TASK [Gathering Facts] *********************************************************
+2017-09-25 17:27:04,644 p=7140 u=student |  ok: [servera.lab.example.com]
+2017-09-25 17:27:04,648 p=7140 u=student |  TASK [Install package] *********************************************************
+2017-09-25 17:27:11,882 p=7140 u=student |  changed: [servera.lab.example.com]
+2017-09-25 17:27:11,886 p=7140 u=student |  TASK [Deliver webpage] *********************************************************
+2017-09-25 17:27:12,708 p=7140 u=student |  changed: [servera.lab.example.com]
+2017-09-25 17:27:12,712 p=7140 u=student |  TASK [Enable and restart SERVICE] **********************************************
+2017-09-25 17:27:13,232 p=7140 u=student |  changed: [servera.lab.example.com]
+2017-09-25 17:27:13,236 p=7140 u=student |  TASK [OPEN THE FIREWALL port] **************************************************
+2017-09-25 17:27:13,951 p=7140 u=student |  changed: [servera.lab.example.com]
+2017-09-25 17:27:13,958 p=7140 u=student |  PLAY [Play 2 to deploy webserver] **********************************************
+2017-09-25 17:27:13,962 p=7140 u=student |  TASK [Gathering Facts] *********************************************************
+2017-09-25 17:27:14,732 p=7140 u=student |  ok: [serverb.lab.example.com]
+2017-09-25 17:27:14,735 p=7140 u=student |  TASK [Install package] *********************************************************
+2017-09-25 17:27:21,119 p=7140 u=student |  changed: [serverb.lab.example.com]
+2017-09-25 17:27:21,123 p=7140 u=student |  TASK [Deliver webpage] *********************************************************
+2017-09-25 17:27:21,844 p=7140 u=student |  changed: [serverb.lab.example.com]
+2017-09-25 17:27:21,848 p=7140 u=student |  TASK [Enable and restart SERVICE] **********************************************
+2017-09-25 17:27:22,269 p=7140 u=student |  changed: [serverb.lab.example.com]
+2017-09-25 17:27:22,273 p=7140 u=student |  TASK [OPEN THE FIREWALL port] **************************************************
+2017-09-25 17:27:22,911 p=7140 u=student |  changed: [serverb.lab.example.com]
+2017-09-25 17:27:22,912 p=7140 u=student |  PLAY RECAP *********************************************************************
+2017-09-25 17:27:22,912 p=7140 u=student |  servera.lab.example.com    : ok=5    changed=4    unreachable=0    failed=0   
+2017-09-25 17:27:22,913 p=7140 u=student |  serverb.lab.example.com    : ok=5    changed=4    unreachable=0    failed=0   
+2017-09-25 17:32:07,510 p=7342 u=student |  ERROR! Syntax Error while loading YAML.
+
+
+The error appears to have been in '/home/student/myfirst/second.yaml': line 7, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+     #tasks:
+      - name: Install package
+      ^ here
+
+2017-09-25 17:36:31,296 p=7404 u=student |   [WARNING]: No hosts matched, nothing to do
+
+2017-09-25 17:36:31,298 p=7404 u=student |  ERROR! No argument passed to command module
+2017-09-25 17:36:38,012 p=7409 u=student |  PLAY [servera.lab.example.com] *************************************************
+2017-09-25 17:36:38,059 p=7409 u=student |  TASK [Gathering Facts] *********************************************************
+2017-09-25 17:36:39,135 p=7409 u=student |  ok: [servera.lab.example.com]
+2017-09-25 17:36:39,139 p=7409 u=student |  TASK [yum] *********************************************************************
+2017-09-25 17:36:39,766 p=7409 u=student |  ok: [servera.lab.example.com]
+2017-09-25 17:36:39,770 p=7409 u=student |  TASK [copy] ********************************************************************
+2017-09-25 17:36:40,540 p=7409 u=student |  ok: [servera.lab.example.com]
+2017-09-25 17:36:40,544 p=7409 u=student |  TASK [service] *****************************************************************
+2017-09-25 17:36:40,966 p=7409 u=student |  ok: [servera.lab.example.com]
+2017-09-25 17:36:40,969 p=7409 u=student |  TASK [firewalld] ***************************************************************
+2017-09-25 17:36:41,648 p=7409 u=student |  ok: [servera.lab.example.com]
+2017-09-25 17:36:41,650 p=7409 u=student |  PLAY RECAP *********************************************************************
+2017-09-25 17:36:41,650 p=7409 u=student |  servera.lab.example.com    : ok=5    changed=0    unreachable=0    failed=0   
+2017-09-25 17:38:21,431 p=7494 u=student |  PLAY [servera.lab.example.com] *************************************************
+2017-09-25 17:38:21,478 p=7494 u=student |  TASK [Gathering Facts] *********************************************************
+2017-09-25 17:38:22,452 p=7494 u=student |  ok: [servera.lab.example.com]
+2017-09-25 17:38:22,456 p=7494 u=student |  TASK [yum] *********************************************************************
+2017-09-25 17:38:23,078 p=7494 u=student |  ok: [servera.lab.example.com]
+2017-09-25 17:38:23,082 p=7494 u=student |  TASK [copy] ********************************************************************
+2017-09-25 17:38:24,268 p=7494 u=student |  [0;31m--- before: /var/www/html/index.html[0m
+[0;31m[0m[0;32m+++ after: /tmp/tmpDZ89hP[0m
+[0;32m[0m[0;36m@@ -1 +1 @@[0m
+[0;36m[0m[0;31m-This is a test Page.[0m
+[0;31m[0m[0;32m+ANAND PAVITHRAN.[0m
+[0;32m[0m
+
+2017-09-25 17:38:24,268 p=7494 u=student |  changed: [servera.lab.example.com]
+2017-09-25 17:38:24,272 p=7494 u=student |  TASK [service] *****************************************************************
+2017-09-25 17:38:24,695 p=7494 u=student |  ok: [servera.lab.example.com]
+2017-09-25 17:38:24,698 p=7494 u=student |  TASK [firewalld] ***************************************************************
+2017-09-25 17:38:25,384 p=7494 u=student |  ok: [servera.lab.example.com]
+2017-09-25 17:38:25,387 p=7494 u=student |  PLAY RECAP *********************************************************************
+2017-09-25 17:38:25,387 p=7494 u=student |  servera.lab.example.com    : ok=5    changed=1    unreachable=0    failed=0   
+2017-09-25 17:39:16,622 p=7570 u=student |  PLAY [servera.lab.example.com] *************************************************
+2017-09-25 17:39:16,669 p=7570 u=student |  TASK [Gathering Facts] *********************************************************
+2017-09-25 17:39:17,313 p=7570 u=student |  ok: [servera.lab.example.com]
+2017-09-25 17:39:17,317 p=7570 u=student |  TASK [yum] *********************************************************************
+2017-09-25 17:39:17,938 p=7570 u=student |  ok: [servera.lab.example.com]
+2017-09-25 17:39:17,942 p=7570 u=student |  TASK [copy] ********************************************************************
+2017-09-25 17:39:18,760 p=7570 u=student |  changed: [servera.lab.example.com]
+2017-09-25 17:39:18,764 p=7570 u=student |  TASK [service] *****************************************************************
+2017-09-25 17:39:19,177 p=7570 u=student |  ok: [servera.lab.example.com]
+2017-09-25 17:39:19,182 p=7570 u=student |  TASK [firewalld] ***************************************************************
+2017-09-25 17:39:19,855 p=7570 u=student |  ok: [servera.lab.example.com]
+2017-09-25 17:39:19,857 p=7570 u=student |  PLAY RECAP *********************************************************************
+2017-09-25 17:39:19,857 p=7570 u=student |  servera.lab.example.com    : ok=5    changed=1    unreachable=0    failed=0   
+2017-09-25 17:39:33,493 p=7629 u=student |  PLAY [servera.lab.example.com] *************************************************
+2017-09-25 17:39:33,542 p=7629 u=student |  TASK [Gathering Facts] *********************************************************
+2017-09-25 17:39:34,178 p=7629 u=student |  ok: [servera.lab.example.com]
+2017-09-25 17:39:34,181 p=7629 u=student |  TASK [yum] *********************************************************************
+2017-09-25 17:39:34,797 p=7629 u=student |  ok: [servera.lab.example.com]
+2017-09-25 17:39:34,801 p=7629 u=student |  TASK [copy] ********************************************************************
+2017-09-25 17:39:35,553 p=7629 u=student |  ok: [servera.lab.example.com]
+2017-09-25 17:39:35,556 p=7629 u=student |  TASK [service] *****************************************************************
+2017-09-25 17:39:35,969 p=7629 u=student |  ok: [servera.lab.example.com]
+2017-09-25 17:39:35,972 p=7629 u=student |  TASK [firewalld] ***************************************************************
+2017-09-25 17:39:36,636 p=7629 u=student |  ok: [servera.lab.example.com]
+2017-09-25 17:39:36,638 p=7629 u=student |  PLAY RECAP *********************************************************************
+2017-09-25 17:39:36,638 p=7629 u=student |  servera.lab.example.com    : ok=5    changed=0    unreachable=0    failed=0   

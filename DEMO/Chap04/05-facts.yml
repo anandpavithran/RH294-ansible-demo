@@ -1,0 +1,6 @@
+- name: Test play
+  hosts: servera.lab.example.com
+  remote_user: devops
+  tasks:
+    - debug: 
+        msg: "Hello this is the first task"

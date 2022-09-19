@@ -1,0 +1,14 @@
+---
+  - hosts: all
+    become: True
+    remote_user: devops
+    vars:
+      users:
+        - test1
+        - test2
+    tasks:
+      - name: Adding users
+        user: name="{{ item }}"
+        with_items: "{{ users }}"
+        when: ansible_hostname=="serverb"
+

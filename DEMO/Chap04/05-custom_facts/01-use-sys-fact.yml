@@ -1,0 +1,8 @@
+---
+- name: Using standard system facts demo
+  hosts: servera.lab.example.com
+  tasks:
+  - name: Display the hostname collected by setup
+    debug:
+     msg: "The server name fact collected from the hosts: {{ansible_hostname}}'"
+...

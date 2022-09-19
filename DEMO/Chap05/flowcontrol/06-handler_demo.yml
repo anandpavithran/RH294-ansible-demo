@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  tasks:
+  - name: Copy the config file
+    copy:
+      src: /tmp/myapp.conf
+      dest: /etc/myapp.conf
+    notify:
+      - restart_myapp
+  
+  handlers:
+    - name: restart_myapp
+      debug:
+        msg: "restart myapp"

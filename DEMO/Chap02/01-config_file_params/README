@@ -1,0 +1,11 @@
+Copy XX-ansible.cfg to ansible.cfg in the same folder and 
+run ansible command below to show the differences.
+
+#ansible remote -m command -a whoami
+
+Discussion could be extended by changing the sudoers config in servera/b, 
+and demo the importance of "become_ask_pass" parameter. 
+On servera/b modify /etc/sudoers.d/devops to look like
+
+devops ALL=(ALL) ALL
+

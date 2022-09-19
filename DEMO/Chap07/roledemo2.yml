@@ -1,0 +1,17 @@
+- name: Role test
+  hosts: localhost
+
+  pre_tasks:
+    - name: Pre Task1
+      module: 
+  
+  roles:
+    - redhat.webserver
+
+  tasks:
+    - name: Regular Task1
+      module:
+
+  post_tasks:
+    - name: Post Task1
+      module:

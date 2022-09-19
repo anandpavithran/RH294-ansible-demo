@@ -1,0 +1,13 @@
+---
+- name: Local whoami
+  hosts: all
+  remote_user: student
+  become: no
+  tasks:
+  - name: Hey who am I?
+    shell: whoami | tee  /tmp/out
+    register: command_out
+  - debug:
+      var: command_out
+#      var: command_out.stdout
+...

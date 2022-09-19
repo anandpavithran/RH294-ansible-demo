@@ -1,0 +1,10 @@
+---
+   - name: Play 1 to deploy webserver
+     hosts: servera.lab.example.com
+     become: yes
+     remote_user: devops
+     tasks:
+      - name: Patch management
+        yum: name="{{pkg1}}" state="{{st}}"
+
+... 

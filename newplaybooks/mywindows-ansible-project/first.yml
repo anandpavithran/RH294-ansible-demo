@@ -1,0 +1,8 @@
+---
+  - hosts: all
+    tasks:
+      - name: run ipconfig
+        raw: ipconfig
+        register: apple
+      - debug: var=apple
+...

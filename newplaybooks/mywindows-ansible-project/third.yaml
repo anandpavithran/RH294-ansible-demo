@@ -1,0 +1,16 @@
+---
+  - hosts: all
+    tasks:
+      - name: Create user bob
+        win_user:
+          name: bob
+          password: B0bP4$$06D
+          state: present
+          groups:
+            - Users
+      - name: Delete user alice
+        win_user:
+          name: alice
+          state: absent
+          
+...

@@ -1,0 +1,5 @@
+- name: Role test
+  hosts: localhost
+  roles:
+    - redhat.installdb
+    - redhat.startdb

@@ -1,0 +1,10 @@
+---
+- name: Play to register an output
+  hosts: remote
+  tasks:
+    - name: run whoami on remote box
+      command: whoami
+      register: output
+    - debug:
+        var: output.rc
+...

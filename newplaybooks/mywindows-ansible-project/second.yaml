@@ -1,0 +1,13 @@
+- name: Test PsExec
+  hosts: windows
+  tasks:
+  - name: Copy PsExec
+    win_copy:
+      src: PSTools/PsExec.exe
+      dest: "{{ ansible_user_dir }}/Desktop/PsExec.exe"
+      force: no
+ 
+  - name: Run Windows Calculator
+    win_command: "{{ ansible_user_dir }}/Desktop/psexec.exe -accepteula -nobanner -i 1 -s calc.exe"
+    register: output
+  - debug: var=output

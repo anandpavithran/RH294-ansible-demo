@@ -1,0 +1,15 @@
+---
+- name: local play
+  hosts: local
+  tasks:
+  - name: message
+    debug:
+      msg: "The value of test is {{test}}"
+
+- name: remote play
+  hosts: remote
+  tasks:
+  - name: message
+    debug:
+      msg: "The value of test is {{test}}"
+...

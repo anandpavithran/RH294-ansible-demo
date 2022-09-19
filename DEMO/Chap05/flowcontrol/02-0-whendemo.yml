@@ -1,0 +1,14 @@
+---
+- hosts: all
+  vars:
+    db_users:
+      - db_admin
+      - db_user
+      - db_bkupuser
+  tasks:
+  - name: Create the database users
+    debug:
+      msg: "{{item}} will be created"
+    with_items: "{{db_users}}"
+    when: ansible_fqdn == "servera.lab.example.com"
+

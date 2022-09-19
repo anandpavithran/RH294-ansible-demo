@@ -1,0 +1,10 @@
+---
+- name: Play with a log running task
+  hosts: all
+  tasks:
+  - name: Long task to run on a managed hosts.
+    command: sleep 20
+    async: 0
+  - name: Task no. 2
+    debug:
+      msg: "This is the second task"

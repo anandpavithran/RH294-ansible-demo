@@ -1,0 +1,12 @@
+---
+   - name: Play 1 to deploy webserver
+     hosts: servera.lab.example.com
+     become: yes
+     remote_user: devops
+     tasks:
+      - name: Deploy yum config-1
+        fetch: src=/etc/yum.repos.d/rhel_dvd.repo  dest=/tmp/fetched
+      - name: Deploy yum config-2
+        fetch: src=/etc/yum.repos.d/ansible.repo  dest=/tmp/fetched
+
+... 

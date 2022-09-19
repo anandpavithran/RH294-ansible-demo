@@ -1,0 +1,20 @@
+---
+- name: Play for QA environment 
+  hosts: qahosts
+  tasks:
+  - name: Include QA env vars
+    include_vars: qa/env.yml
+
+  - name: Push app to QA
+    include: qa/push.yml
+  
+- name: Play for Prod environment
+  hosts: prod
+  tasks:
+  - name: Include prod env vars
+    include_vars: prod/env.yml
+
+##God bless this step!!! It going to Prod!!
+  - name: Push app to prodcution
+    include: prod/push.yml
+  
