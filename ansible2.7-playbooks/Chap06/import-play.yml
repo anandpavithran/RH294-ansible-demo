@@ -1,0 +1,11 @@
+---
+- name: Demo of import Playbook
+  hosts: servera
+  tasks: 
+    - name: From main playbook
+      debug: msg="I am from MAIN FILE"
+- name: import playbook1
+  import_playbook: import/play1.yml
+- name: import playbook2
+  import_playbook: import/play2.yml
+...

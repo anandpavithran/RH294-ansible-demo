@@ -1,0 +1,12 @@
+{
+    "deb": {
+        "hosts": [
+            "serverb"
+        ]
+    }, 
+    "web": {
+        "hosts": [
+            "servera"
+        ]
+    }
+}

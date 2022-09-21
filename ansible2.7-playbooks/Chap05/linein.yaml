@@ -1,0 +1,57 @@
+---
+- name: DEmo of webserver configuration
+  hosts: servera
+  tasks:
+  - lineinfile:
+     path: /tmp/a.txt
+     regexp: '^SELINUX='
+     line: 'SELINUX=enforcing'
+
+  - lineinfile:
+     path: /tmp/a.txt
+     state: absent
+     regexp: '^%wheel'
+
+# Searches for a line that begins with 127.0.0.1 and replaces it with the value of the 'lin
+  - lineinfile:
+     path: /tmp/a.txt
+     regexp: '^127\.0\.0\.1'
+     line: '127.0.0.1 localhost'
+     owner: root
+     group: root
+     mode: 0644
+
+
+  - lineinfile:
+     path: /tmp/a.txt
+     regexp: '^Listen '
+     insertafter: '^#Listen '
+     line: 'Listen 8080'
+
+  - lineinfile:
+     path: /tmp/a.txt
+     regexp: '^# port for http'
+     insertbefore: '^www.*80/tcp'
+     line: '# port for http by default'
+
+# Add a line to a file if the file does not exist, without passing regexp
+  - lineinfile:
+     path: /tmp/a.txt
+     line: '192.168.1.99 foo.lab.net foo'
+     create: yes
+
+  - lineinfile:
+     path: /tmp/a.txt
+     state: present
+     regexp: '^%wheel\s'
+     line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+
+
+# Validate the sudoers file before saving
+  - lineinfile:
+     path: /etc/sudoers
+     state: present
+     regexp: '^%ADMIN ALL='
+     line: '%ADMIN ALL=(ALL) NOPASSWD: ALL'
+     validate: '/usr/sbin/visudo -cf %s'
+

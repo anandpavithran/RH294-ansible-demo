@@ -1,0 +1,12 @@
+---
+- name: DEmo of webserver configuration
+  hosts: servera
+  tasks:
+   - name: Touch a file and set permissions
+     file:
+      path: /tmp/test
+      owner: devops
+      group: root
+      mode: 0640
+      state: touch
+...

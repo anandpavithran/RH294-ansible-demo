@@ -1,0 +1,8 @@
+# port for http
+SELINUX=permissive
+%wheel testing
+127.0.0.1
+Listen 80
+www.*80/tcp
+# port for http
+%wheel testing

@@ -1,0 +1,10 @@
+---
+- name: DEmo of webserver configuration
+  hosts: servera
+  tasks:
+   - name: Synchronize file
+     fetch:
+      src: /tmp/test
+      dest: /tmp/prefix-{{ inventory_hostname }}
+      flat: yes
+

@@ -1,0 +1,9 @@
+---
+- name: DEmo of webserver configuration
+  hosts: servera
+  tasks:
+   - name: Touch a file and set permissions
+     copy:
+      src: a.txt
+      dest: /tmp/a.txt
+...

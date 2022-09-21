@@ -1,0 +1,10 @@
+---
+- name: DEmo of webserver configuration
+  hosts: servera
+  tasks:
+   - name: SELinux type is set to samba_share_t
+     file:
+      path: /home/devops/test
+      setype: samba_share_t
+      state: touch 
+...

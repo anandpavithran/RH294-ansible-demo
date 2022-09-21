@@ -1,0 +1,11 @@
+---
+- name: DEmo of webserver configuration
+  hosts: servera
+  tasks:
+   - name: Verify the checksum of a file
+     stat:
+      path: /tmp/test
+      checksum_algorithm: md5
+     register: result
+   - debug:
+      msg: "The checksum of the file is {{ result.stat.checksum }}"
