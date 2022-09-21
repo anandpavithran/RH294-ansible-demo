@@ -1,0 +1,16 @@
+---
+- name: DEmo of webserver configuration
+  hosts: servera
+  tasks:
+      - name: Install
+        include_tasks: tasks/install.yml
+      - name: Deliver the content
+        include_tasks: tasks/content.yml
+      - name: OPen firewall port   
+        include_tasks: tasks/security.yml
+  handlers:
+      - name: myhandler1
+        include_tasks: tasks/service.yml
+ 
+
+...

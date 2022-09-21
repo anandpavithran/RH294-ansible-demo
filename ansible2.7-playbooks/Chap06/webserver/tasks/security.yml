@@ -1,0 +1,6 @@
+- name: OPen firewall port   
+  firewalld:
+   service: http
+   immediate: yes
+   permanent: yes
+   state: enabled

@@ -1,0 +1,7 @@
+- name: myhandler1
+  service:
+   name: httpd
+   state: started
+   enabled: yes
+ 
+

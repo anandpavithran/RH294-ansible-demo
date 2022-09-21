@@ -40,18 +40,18 @@
      line: '192.168.1.99 foo.lab.net foo'
      create: yes
 
-  - lineinfile:
-     path: /tmp/a.txt
-     state: present
-     regexp: '^%wheel\s'
-     line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+  #- lineinfile:
+   #  path: /tmp/a.txt
+    # state: present
+    # regexp: '^%wheel\s'
+    # line: '%wheel ALL=(ALL) NOPASSWD: ALL'
 
 
 # Validate the sudoers file before saving
-  - lineinfile:
-     path: /etc/sudoers
-     state: present
-     regexp: '^%ADMIN ALL='
-     line: '%ADMIN ALL=(ALL) NOPASSWD: ALL'
-     validate: '/usr/sbin/visudo -cf %s'
+  #- lineinfile:
+   #  path: /etc/sudoers
+    # state: present
+    # regexp: '^%ADMIN ALL='
+     #line: '%ADMIN ALL=(ALL) NOPASSWD: ALL'
+     #validate: '/usr/sbin/visudo -cf %s'
 

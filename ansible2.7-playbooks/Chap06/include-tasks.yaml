@@ -4,8 +4,8 @@
   tasks: 
     - name: From main playbook
       debug: msg="I am from MAIN FILE"
-    - name: import playbook1
-      include_tasks: tasks/play1.yml
-    - name: import playbook2
-      include_tasks: tasks/play2.yml
+    - name: include task1
+      include_tasks: tasks/task1.yml
+    - name: include task2
+      include_tasks: tasks/task2.yml
 ...

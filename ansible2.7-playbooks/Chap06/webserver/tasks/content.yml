@@ -1,0 +1,8 @@
+  - name: Deliver the content
+    copy: 
+     content: HelloWorld
+     dest: /var/www/html/index.html
+    notify: 
+    - myhandler1
+        
+...

@@ -6,31 +6,23 @@
         yum:
          name: httpd
          state: present
-      - name: STart and enable service
-        service:
-         name: httpd
-         state: started
-         enabled: yes
       - name: Deliver the content
         copy: 
-         content: |
-           <html>
-           <head>
-           <title> Chapter 05 </title>
-           </head>
-           <body>
-           <h1>Demo of blockinfile module</h1>
-           </body>
-           </html>
+         content: HelloWorld
          dest: /var/www/html/index.html
+        notify: 
+         - myhandler1
       - name: OPen firewall port   
         firewalld:
          service: http
          immediate: yes
          permanent: yes
          state: enabled
-
-
-
-           
+  handlers:
+      - name: myhandler1
+        service:
+         name: httpd
+         state: started
+         enabled: yes
+        
 ...
