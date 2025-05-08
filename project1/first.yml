@@ -1,0 +1,25 @@
+---
+- name: demo of webserver
+  hosts: all
+  gather_facts: false
+  tasks:
+   - name: task1
+     ansible.builtin.yum:
+      name: httpd
+      state: present
+   - name: task2
+     ansible.builtin.service:
+      name: httpd
+      state: started
+      enabled: yes
+   - name: task3
+     ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html
+   - name: task4
+     ansible.posix.firewalld:
+      service: http
+      immediate: true
+      permanent: true
+
+...

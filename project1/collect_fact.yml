@@ -1,0 +1,7 @@
+---
+- name: coolectfact
+  hosts: all
+  tasks:
+   - name: fetch fact
+     ansible.builtin.setup:
+...
